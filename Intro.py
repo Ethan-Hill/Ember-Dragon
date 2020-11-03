@@ -31,7 +31,7 @@ def start():
     will_you_help_us_question = [
         inquirer.List('choice',
                       message="Will you help us?",
-                      choices=['Of course!', 'Nah, dont feel like it'],
+                      choices=['Of course!'],
                       ),
     ]
 
@@ -43,11 +43,6 @@ def start():
     # Check to see if they agreed
     if answer["choice"] == "Of course!":
         print(colored(NPC + 'Thank you so much!', 'green'))
-
-    # Check if they disagreed
-    else:
-        print(colored(NPC + 'But ' +
-                      player["name"] + ' you must help us.', 'green'))
 
     clear()
 

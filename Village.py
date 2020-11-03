@@ -27,14 +27,5 @@ def Start():
     else:
       print(colored(NPC + 'Im Peter, the village Peasant.', 'green'))
 
-    answer2 = inquirer.prompt(peter_questions)
-    answer2.pop(answer["choice"])
-
-    # Check what they asked
-    if answer2["choice"] == "What is this curse?":
-        print(colored(NPC + 'The curse is raverging our village, to know more go see Sam The Smith who lives East of the village', 'green'))
-    else:
-      print(colored(NPC + 'Im Peter, the village Peasant.', 'green'))
-
 if __name__ == "__main__":
   Start()
