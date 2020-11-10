@@ -1,5 +1,6 @@
 import inquirer
 import os
+import SamTheSmith
 import Village
 from termcolor import colored
 
@@ -8,7 +9,14 @@ yLimit = 10
 xPos = 1
 yPos = 1
 
-VillagePeople = 3
+SamVisited = false
+PeterVisited = false
+
+VillagePeopleX = 1
+VillagePeopleY = 3
+
+SamTheSmithX = 1
+SamTheSmithY = 6
 
 def clear():
     # Clears the terminal at the start
@@ -51,12 +59,17 @@ def getDirection(command):
 
 def walkNorth():
     global yPos
+    global xPos
+    global PeterVisited
+    global SamVisited
 
     if yPos < 10:
         print("You Walk North...")
         yPos += 1
-        if yPos == VillagePeople:
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == false:
           Village.Start()
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == true:
+          SamTheSmith.Start()
         printCoords()
         userInput()
     else:
@@ -66,10 +79,17 @@ def walkNorth():
 
 def walkEast():
     global xPos
+    global xPos
+    global PeterVisited
+    global SamVisited
 
     if xPos < 10:
         print("You Walk East...")
         xPos += 1
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == false:
+          Village.Start()
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == true:
+          SamTheSmith.Start()
         printCoords()
         userInput()
     else:
@@ -79,10 +99,17 @@ def walkEast():
 
 def walkSouth():
     global yPos
+    global xPos
+    global PeterVisited
+    global SamVisited
 
     if yPos > 1:
         print("You Walk South...")
         yPos -= 1
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == false:
+          Village.Start()
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == true:
+          SamTheSmith.Start()
         printCoords()
         userInput()
     else:
@@ -92,10 +119,17 @@ def walkSouth():
 
 def walkWest():
     global xPos
+    global xPos
+    global PeterVisited
+    global SamVisited
 
     if xPos > 1:
         print("You Walk West...")
         xPos -= 1
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == false:
+          Village.Start()
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == true:
+          SamTheSmith.Start()
         printCoords()
         userInput()
     else:
