@@ -23,7 +23,8 @@ def Start():
 
     # Check what they asked
     if answer["choice"] == "Im a travler looking for information on this curse.":
-        print(colored(NPC + 'There is a dragon which is only weak to the ember fire which i hold in my hand, use this against it and you will defeat it. Cut the claw off and return it too the village and you will save us. The cave it sleeps in is south east', 'green'))
+        print(colored(NPC + 'There is a dragon which is only weak to the ember fire which i hold in my hand, use this against it and you will defeat it. Cut the claw off and return it too the village and you will save us. The cave it sleeps in is south east', 'cyan'))
+        print(colored('Collected item: Ember Fire', 'yellow'))
 
 if __name__ == "__main__":
   Start()

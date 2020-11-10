@@ -2,6 +2,7 @@ import inquirer
 import os
 import SamTheSmith
 import Village
+import Cave
 from termcolor import colored
 
 xLimit = 10
@@ -9,14 +10,18 @@ yLimit = 10
 xPos = 1
 yPos = 1
 
-SamVisited = false
-PeterVisited = false
+SamVisited = False
+PeterVisited = False
+CaveVisited = False
 
 VillagePeopleX = 1
 VillagePeopleY = 3
 
 SamTheSmithX = 1
 SamTheSmithY = 6
+
+CaveX = 7
+CaveY = 3
 
 def clear():
     # Clears the terminal at the start
@@ -62,14 +67,23 @@ def walkNorth():
     global xPos
     global PeterVisited
     global SamVisited
+    global CaveVisited
 
     if yPos < 10:
         print("You Walk North...")
         yPos += 1
-        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == false:
+        print(PeterVisited)
+        print(CaveVisited)
+        print(SamVisited)
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False:
           Village.Start()
-        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == true:
+          PeterVisited = True
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False:
           SamTheSmith.Start()
+          SamVisited = True
+        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True:
+          Cave.Start()
+          CaveVisited = True
         printCoords()
         userInput()
     else:
@@ -82,14 +96,20 @@ def walkEast():
     global xPos
     global PeterVisited
     global SamVisited
+    global CaveVisited
 
     if xPos < 10:
         print("You Walk East...")
         xPos += 1
-        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == false:
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False:
           Village.Start()
-        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == true:
+          PeterVisited = True
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False:
           SamTheSmith.Start()
+          SamVisited = True
+        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True:
+          Cave.Start()
+          CaveVisited = True
         printCoords()
         userInput()
     else:
@@ -102,14 +122,20 @@ def walkSouth():
     global xPos
     global PeterVisited
     global SamVisited
+    global CaveVisited
 
     if yPos > 1:
         print("You Walk South...")
         yPos -= 1
-        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == false:
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False:
           Village.Start()
-        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == true:
+          PeterVisited = True
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False:
           SamTheSmith.Start()
+          SamVisited = True
+        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True:
+          Cave.Start()
+          CaveVisited = True
         printCoords()
         userInput()
     else:
@@ -122,14 +148,20 @@ def walkWest():
     global xPos
     global PeterVisited
     global SamVisited
+    global CaveVisited
 
     if xPos > 1:
         print("You Walk West...")
         xPos -= 1
-        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == false:
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False:
           Village.Start()
-        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == true:
+          PeterVisited = True
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False:
           SamTheSmith.Start()
+          SamVisited = True
+        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True:
+          Cave.Start()
+          CaveVisited = True
         printCoords()
         userInput()
     else:
