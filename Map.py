@@ -3,6 +3,7 @@ import os
 import SamTheSmith
 import Village
 import Cave
+import End
 from termcolor import colored
 
 xLimit = 10
@@ -13,6 +14,7 @@ yPos = 1
 SamVisited = False
 PeterVisited = False
 CaveVisited = False
+EndVisited = False
 
 VillagePeopleX = 1
 VillagePeopleY = 3
@@ -22,6 +24,9 @@ SamTheSmithY = 6
 
 CaveX = 7
 CaveY = 3
+
+EndX = 1
+EndY = 3
 
 def clear():
     # Clears the terminal at the start
@@ -68,22 +73,23 @@ def walkNorth():
     global PeterVisited
     global SamVisited
     global CaveVisited
+    global EndVisited
 
     if yPos < 10:
         print("You Walk North...")
         yPos += 1
-        print(PeterVisited)
-        print(CaveVisited)
-        print(SamVisited)
-        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False:
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False and EndVisited == False:
           Village.Start()
           PeterVisited = True
-        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False:
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False and EndVisited == False:
           SamTheSmith.Start()
           SamVisited = True
-        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True:
+        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True and EndVisited == False:
           Cave.Start()
           CaveVisited = True
+        if xPos == EndX and yPos == EndY and PeterVisited == True and CaveVisited == True and SamVisited == True and EndVisited == False:
+          End.Start()
+          EndVisited = True
         printCoords()
         userInput()
     else:
@@ -97,19 +103,23 @@ def walkEast():
     global PeterVisited
     global SamVisited
     global CaveVisited
+    global EndVisited
 
     if xPos < 10:
         print("You Walk East...")
         xPos += 1
-        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False:
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False and EndVisited == False:
           Village.Start()
           PeterVisited = True
-        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False:
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False and EndVisited == False:
           SamTheSmith.Start()
           SamVisited = True
-        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True:
+        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True and EndVisited == False:
           Cave.Start()
           CaveVisited = True
+        if xPos == EndX and yPos == EndY and PeterVisited == True and CaveVisited == True and SamVisited == True and EndVisited == False:
+          End.Start()
+          EndVisited = True
         printCoords()
         userInput()
     else:
@@ -123,19 +133,23 @@ def walkSouth():
     global PeterVisited
     global SamVisited
     global CaveVisited
+    global EndVisited
 
     if yPos > 1:
         print("You Walk South...")
         yPos -= 1
-        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False:
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False and EndVisited == False:
           Village.Start()
           PeterVisited = True
-        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False:
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False and EndVisited == False:
           SamTheSmith.Start()
           SamVisited = True
-        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True:
+        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True and EndVisited == False:
           Cave.Start()
           CaveVisited = True
+        if xPos == EndX and yPos == EndY and PeterVisited == True and CaveVisited == True and SamVisited == True and EndVisited == False:
+          End.Start()
+          EndVisited = True
         printCoords()
         userInput()
     else:
@@ -149,19 +163,23 @@ def walkWest():
     global PeterVisited
     global SamVisited
     global CaveVisited
+    global EndVisited
 
     if xPos > 1:
         print("You Walk West...")
         xPos -= 1
-        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False:
+        if xPos == VillagePeopleX and yPos == VillagePeopleY and SamVisited == False and CaveVisited == False and EndVisited == False:
           Village.Start()
           PeterVisited = True
-        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False:
+        if xPos == SamTheSmithX and yPos == SamTheSmithY and PeterVisited == True and CaveVisited == False and SamVisited == False and EndVisited == False:
           SamTheSmith.Start()
           SamVisited = True
-        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True:
+        if xPos == CaveX and yPos == CaveY and PeterVisited == True and CaveVisited == False and SamVisited == True and EndVisited == False:
           Cave.Start()
           CaveVisited = True
+        if xPos == EndX and yPos == EndY and PeterVisited == True and CaveVisited == True and SamVisited == True and EndVisited == False:
+          End.Start()
+          EndVisited = True
         printCoords()
         userInput()
     else:
