@@ -13,6 +13,8 @@ def start():
     # Variable for the NPC name
     NPC = "Garry The Goblin: "
 
+    print(colored('Use commands like walk north to travel around the map', 'yellow'))
+
     # Printing the opening line
     print(colored(NPC + 'WAKE UP! Finally you have arrived traveller to save our village, what is your name traveller?', 'green'))
 

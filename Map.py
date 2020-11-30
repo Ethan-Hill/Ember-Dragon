@@ -44,6 +44,10 @@ def userInput():
     command = input("What would you like to do? ")
     if "walk" in command:
         getDirection(command)
+    elif "help" in command:
+        help() 
+    elif "hint" in command:
+        hint() 
     else:
         print("Unknown command, Please Try Again.")
         userInput()
@@ -59,11 +63,34 @@ def getDirection(command):
     elif "south" in command:
         walkSouth()
     elif "west" in command:
-        walkWest()
+        walkWest()   
     else:
         print("Unknown Direction, Please Try Again. ")
         userInput()
 
+def help():
+  print(colored('HELP', 'yellow'))
+  print(colored('CONTROLS', 'green'))
+  print(colored('Movement -', 'yellow'))
+  print(colored('Walk north: "walk north"', 'yellow'))
+  print(colored('Walk east: "walk east"', 'yellow'))
+  print(colored('Walk south: "walk south"', 'yellow'))
+  print(colored('Walk west: "walk west"', 'yellow'))
+  print(colored('HINTS', 'green'))
+  print(colored('Hint: "hint"', 'yellow'))
+  userInput()
+
+def hint():
+  print(colored('HINT', 'yellow'))
+  if PeterVisited == False:
+    print(colored('Find Peter at 1, 3', 'yellow'))
+  elif PeterVisited == True and SamTheSmith == False:
+    print(colored('Find Sam at 1, 6', 'yellow'))
+  elif PeterVisited == True and SamTheSmith == True and CaveVisited == False:
+    print(colored('Find the cave at 7, 3', 'yellow'))
+  elif PeterVisited == True and SamTheSmith == True and CaveVisited == True and EndVisited == False:
+    print(colored('Find the end at 1, 3', 'yellow'))
+  userInput()
 # Walks in a direction
 
 
