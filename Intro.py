@@ -5,7 +5,10 @@ from termcolor import colored
 
 def clear():
     # Clears the terminal at the start
-    os.system("clear")
+    try:
+        os.system("clear")
+    except:
+        os.system('c')
 
 
 def start():
@@ -20,7 +23,7 @@ def start():
 
     # Creating a question for the player name
     playerName = inquirer.Text('name', message="What's your name"),
-    
+
     player = inquirer.prompt(playerName)
 
     player = player["name"]
@@ -49,9 +52,10 @@ def start():
     clear()
 
     # Print their difficulty
-    print(colored(NPC + 
+    print(colored(NPC +
                   'Thank you, go NORTH too the village to start. Good luck!', 'green'))
     return player
 
+
 if __name__ == "__main__":
-  start()
+    start()
