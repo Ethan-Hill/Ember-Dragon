@@ -1,7 +1,7 @@
 import os
 os.system("pip install termcolor")
 os.system("pip install inquirer")
-os.system("clear")
+os.system("c")
 
 import Intro
 import Map

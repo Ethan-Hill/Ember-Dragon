@@ -4,7 +4,7 @@ from termcolor import colored
 
 def clear():
     # Clears the terminal at the start
-    os.system("clear")
+    os.system("c")
 
 def Start():
   # Variable for the NPC name
